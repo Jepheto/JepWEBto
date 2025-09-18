@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>트랙 목록</h2>
+<form method="get">
+  <input name="q" placeholder="제목 검색" value="{{ q or '' }}">
+  <button type="submit">검색</button>
+</form>
+<ul>
+  {% for it in items %}
+    <li>
+      <strong>{{ it.title }}</strong> — {{ it.uploader }} ({{ it.created_at.strftime('%Y-%m-%d') }})
+      <div><audio controls src="{{ it.url }}"></audio></div>
+    </li>
+  {% else %}
+    <li>등록된 트랙이 없습니다.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

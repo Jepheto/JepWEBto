@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-  <h2>기본 토대</h2>
-  <p>이 페이지에서부터 확장하세요.</p>
+  <h2>Music Upload & Play MVP</h2>
+  <p><a href="{{ url_for('tracks.upload') }}">업로드</a> · <a href="{{ url_for('tracks.list_') }}">트랙 목록</a></p>
 </section>
 {% endblock %}
